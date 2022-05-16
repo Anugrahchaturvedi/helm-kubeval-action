@@ -8,7 +8,7 @@ CURRENT_DIR=$(pwd);
 run_kubeval() {
     # Validate all generated manifest against Kubernetes json schema
     cd "$1"
-    VALUES_FILE="app-values.yaml"
+    VALUES_FILE="$2"
     mkdir helm-output;
     helm template --values "$VALUES_FILE" --output-dir helm-output .;
     find helm-output -type f -exec \
@@ -45,7 +45,8 @@ for CHART in "$CHARTS_PATH"/*/; do
             run_kubeval "$(pwd)" "$VALUES_FILE"
         done
     else
-        run_kubeval "$(pwd)" "/dev/null"
+        VALUES_FILE=app-values.yaml
+        run_kubeval "$(pwd)" "$VALUES_FILE"
     fi
     echo "Cleanup $(pwd)/charts directory after we are done running Kubeval"
     rm -rf $(pwd)/charts/
