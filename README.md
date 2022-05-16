@@ -2,7 +2,7 @@
 
 A [GitHub Action](https://github.com/features/actions) for using [Kubeval](https://github.com/instrumenta/kubeval) to validate Helm Charts in your workflows.
 
-Supports Helm 3 only.
+Supports Helm 3 only.sddsd
 
 ## Example Workflow
 
