@@ -45,7 +45,7 @@ for CHART in "$CHARTS_PATH"/*/; do
             run_kubeval "$(pwd)" "$VALUES_FILE"
         done
     else
-        VALUES_FILE=app-values.yaml
+        VALUES_FILE=test_values.yaml
         run_kubeval "$(pwd)" "$VALUES_FILE"
     fi
     echo "Cleanup $(pwd)/charts directory after we are done running Kubeval"
