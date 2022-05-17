@@ -31,7 +31,7 @@ do
     helm repo add $REPO $URL;
 done < $CONFIG_FILE
 
-helm repo update
+# helm repo update
 
 # For all charts (i.e for every directory) in the directory
 for CHART in "$CHARTS_PATH"/*/; do
